@@ -2,17 +2,8 @@
 # Description: Building the environment-1 for the Mobile Robot to explore
 # Agent - Mobile Robot
 # Obstacles - 'road closed', 'trees', 'traffic lights', 'buildings'
-# Environment: PyCharm and Anaconda environment
-#
-# MIT License
-# Copyright (c) 2018 Valentyn N Sichkar
-# github.com/sichkar-valentyn
-#
-# Reference to:
-# Valentyn N Sichkar. Reinforcement Learning Algorithms for global path planning // GitHub platform. DOI: 10.5281/zenodo.1317899
 
 
-# Importing libraries
 import numpy as np  # To deal with data in form of matrices
 import tkinter as tk  # To build GUI
 import time  # Time is needed to slow down the agent and to see how he runs

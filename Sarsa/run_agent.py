@@ -1,16 +1,7 @@
 # File: run_agent.py
 # Description: Running algorithm
-# Environment: PyCharm and Anaconda environment
-#
-# MIT License
-# Copyright (c) 2018 Valentyn N Sichkar
-# github.com/sichkar-valentyn
-#
-# Reference to:
-# Valentyn N Sichkar. Reinforcement Learning Algorithms for global path planning // GitHub platform. DOI: 10.5281/zenodo.1317899
 
 
-# Importing classes
 from env import Environment
 from agent_brain import SarsaTable
 
