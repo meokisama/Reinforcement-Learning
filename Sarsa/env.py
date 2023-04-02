@@ -7,7 +7,6 @@
 import numpy as np  # To deal with data in form of matrices
 import tkinter as tk  # To build GUI
 import time  # Time is needed to slow down the agent and to see how he runs
-from PIL import Image, ImageTk  # For adding images into the canvas widget
 
 # Setting the sizes for the environment
 pixels = 20   # pixels
@@ -24,7 +23,7 @@ class Environment(tk.Tk, object):
         super(Environment, self).__init__()
         self.action_space = ['up', 'down', 'left', 'right']
         self.n_actions = len(self.action_space)
-        self.title('RL Sarsa. Sichkar Valentyn')
+        self.title('Sarsa')
         self.geometry('{0}x{1}'.format(env_height * pixels, env_height * pixels))
         self.build_environment()
 
@@ -49,12 +48,6 @@ class Environment(tk.Tk, object):
         self.canvas_widget = tk.Canvas(self,  bg='white',
                                        height=env_height * pixels,
                                        width=env_width * pixels)
-
-        # Uploading an image for background
-        img_background = Image.open("images/bg.png")
-        self.background = ImageTk.PhotoImage(img_background)
-        # Creating background on the widget
-        self.bg = self.canvas_widget.create_image(0, 0, anchor='nw', image=self.background)
 
         # Creating grid lines
         for column in range(0, env_width * pixels, pixels):

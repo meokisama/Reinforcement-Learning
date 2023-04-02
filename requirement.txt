@@ -1,4 +1,3 @@
 matplotlib
 pandas
-Pillow
 numpy
