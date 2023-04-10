@@ -10,7 +10,7 @@ from env import final_states
 
 # Creating class for the Q-learning table
 class QLearningTable:
-    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9, e_greedy=0.9):
+    def __init__(self, actions, learning_rate=0.01, reward_decay=0.9, e_greedy=0.1):
         # List of actions
         self.actions = actions
         # Learning rate
@@ -28,15 +28,19 @@ class QLearningTable:
     def choose_action(self, observation):
         # Checking if the state exists in the table
         self.check_state_exist(observation)
-        # Selection of the action - 90 % according to the epsilon == 0.9
-        # Choosing the best action
-        if np.random.uniform() < self.epsilon:
+
+        # state_action = self.q_table.loc[observation, :]
+        # state_action = state_action.reindex(np.random.permutation(state_action.index))
+        # action = state_action.idxmax()
+        
+        ## Epsilon-Greedy
+        if np.random.uniform(0,1) < self.epsilon:
+            action = np.random.choice(self.actions)
+        else:
             state_action = self.q_table.loc[observation, :]
             state_action = state_action.reindex(np.random.permutation(state_action.index))
             action = state_action.idxmax()
-        else:
-            # Choosing random action - left 10 % for choosing randomly
-            action = np.random.choice(self.actions)
+
         return action
 
     # Function for learning and updating Q-table with new knowledge
